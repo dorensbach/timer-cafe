@@ -1,6 +1,12 @@
-// aula xx
-// modelo
-// 27.04.2022
+// Timer Café
+// Projeto para mensurar o tempo que se passa sem café
+// 04.2022
+
+/**
+ * @todo
+ * Criar uma API para salvar o tempo e manter o registro do maior tempo.
+ * Incluir som.
+ */
 
 const contador = document.querySelector('.contador');
 const iniciar = document.querySelector('.iniciar');
@@ -25,10 +31,12 @@ function montaTimer(count) {
 }
 
 function setaIcone(count) {
-    if (count === 300) {
+    if (count === 0) {
+        document.body.classList.value = '';
         return '<img src="./assets/img/face-laugh-beam.svg">';
     }
     if (count < 300) {
+        document.body.classList.value = '';
         return '<img src="./assets/img/face-meh.svg">';
     }
     if (count < 600) {
@@ -58,7 +66,7 @@ function setaIcone(count) {
 
 function iniciaContador() {
     clearInterval(timer);
-    contador.classList.remove('pausado');
+    contador.classList.remove('blink');
     timer = setInterval(function (){
         count++;
         contador.innerHTML = montaTimer(count);
@@ -68,14 +76,14 @@ function iniciaContador() {
 
 function pausarContador() {
     clearInterval(timer);
-    contador.classList.add('pausado');
+    contador.classList.add('blink');
 }
 
 function zerarContador() {
     clearInterval(timer);
-    contador.classList.remove('pausado');
-    document.body.classList.value = '';
+    contador.classList.remove('blink');
     count = 0;
+    icone.innerHTML = setaIcone(count);
     contador.innerHTML = montaTimer(count);
     icone.innerHTML = setaIcone(count);
 }
