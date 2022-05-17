@@ -25,8 +25,11 @@ function montaTimer(count) {
 }
 
 function setaIcone(count) {
-    if (count < 300) {
+    if (count === 300) {
         return '<img src="./assets/img/face-laugh-beam.svg">';
+    }
+    if (count < 300) {
+        return '<img src="./assets/img/face-meh.svg">';
     }
     if (count < 600) {
         document.body.classList.value = 'warning';
