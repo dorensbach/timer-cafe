@@ -43,12 +43,12 @@ function setaIcone(count) {
     if (count < 1050) {
         // document.body.classList.add('alert');
         document.body.classList.value = 'alert';
-        return '<img src="./assets/img/face-angry.svg">'
+        return '<img src="./assets/img/face-angry.svg">';
     };
     if (count >= 1050) {
         // document.body.classList.add('alert');
         document.body.classList.value = count % 2 ===0 ? 'alert' : 'black';
-        return '<img src="./assets/img/face-angry.svg">'
+        return '<img src="./assets/img/face-angry.svg">';
     };
 
 }
